@@ -1,29 +1,31 @@
-🚀 AI Quiz App – Interactive Web-Based Quiz Game
+🎯 Dynamic Quiz App using Open Trivia API
+Dynamic Quiz App is a responsive, beginner-friendly JavaScript web application that lets users test their knowledge across various categories including Computer Science, Mathematics, Science, General Knowledge, and History. This project uses the Open Trivia Database API to dynamically fetch multiple-choice questions, making each quiz session unique and educational.
 
-An elegant, responsive, and interactive AI-powered Quiz Web App designed and developed using HTML5, CSS3, and Vanilla JavaScript. Ideal for students, developers, and educators who want to test or enhance their knowledge in various domains, starting with the Computer Science category.
+🔑 Features
+🔄 Real-time question fetching from Open Trivia API
+👨‍🎓 Personalized user greeting with name input
+📚 Five quiz topics: Computer, Math, Science, General Knowledge, History
+✅ Interactive answers with immediate feedback
+📊 Dynamic progress bar and score tracking
+🔁 Restart option to play again
+📱 Fully responsive and beginner-friendly UI
 
-🎯 Key Features:
+💻 Tech Stack
 
-🔐 Personalized Experience – Users enter their name and get a tailored quiz session
-📚 Topic Selection – (Currently set to Computer, expandable to more topics)
-⚡ Dynamic Question Rendering – Randomized and auto-rotating questions
-📈 Real-Time Score Tracking – Live progress bar and score update
-🏆 Result Display – Final score screen with retake option
-🎨 Fully Responsive Design – Seamless experience on mobile, tablet, and desktop
-⚙️ Clean UI/UX with Font Awesome icons and modern layout
+HTML5, CSS3, JavaScript (ES6+)
 
-🛠️ Technologies Used:
+Open Trivia DB API
 
-HTML5 – Semantic structure
-CSS3 – Responsive and clean styling
-JavaScript (ES6+) – Logic handling and dynamic interactivity
-Font Awesome – Iconography
-Google Fonts (Poppins) – Typography
+📥 How to Use
+Enter your name.
+Select a quiz topic from the dropdown.
+Start the quiz and test your knowledge
+View your score and try again!
 
-👨‍💻 Developed By:
+📧 Developer Info
+Made with ❤️ by Muhammad Muzammil
+Email: muzammil.thedeveloper@gmail.com
 
-Muhammad Muzammil
-📧 muzammil.thedeveloper@gmail.com
-🔍 Aspiring Web Developer | JavaScript Enthusiast | Front-End Specialist
 
-Muhammad Muzammil Developer , muzammil.thedeveloper@gmail.com ,Web Development Projects
+quiz-app, javascript-project, opentdb-api, dynamic-quiz, web-development
+
