@@ -22,8 +22,6 @@ let currentQuestionIndex = 0;
 let score = 0;
 
 // ========== EVENT LISTENERS ==========
-
-// Start button logic
 startButton.addEventListener("click", () => {
   const username = usernameInput.value.trim();
   const topic = topicInput.value.trim();
@@ -39,7 +37,6 @@ startButton.addEventListener("click", () => {
   fetchQuestions(topic);
 });
 
-// Next button logic
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
@@ -49,7 +46,6 @@ nextButton.addEventListener("click", () => {
   }
 });
 
-// Restart button logic
 restartButton.addEventListener("click", () => {
   startScreen.style.display = "block";
   resultContainer.style.display = "none";
@@ -59,50 +55,45 @@ restartButton.addEventListener("click", () => {
   scoreElement.innerText = score;
 });
 
-// ========== FUNCTION DEFINITIONS ==========
-
 /**
- * Fetches questions based on a given topic.
+ * Fetch questions from Open Trivia API.
  */
 function fetchQuestions(topic) {
-  // Dummy data (replace with API in future)
-  questions = [
-    {
-      question: `What is the capital of France?`,
-      answers: ["Paris", "London", "Rome", "Berlin"],
-      correct: "Paris"
-    },
-    {
-      question: `Which language is used for web apps?`,
-      answers: ["Python", "Java", "JavaScript", "C++"],
-      correct: "JavaScript"
-    },
-    {
-      question: `HTML stands for?`,
-      answers: ["Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks and Text Markup Language", "None"],
-      correct: "Hyper Text Markup Language"
-    },
-    {
-      question: `Who is the founder of Microsoft?`,
-      answers: ["Bill Gates", "Steve Jobs", "Mark Zuckerberg", "Elon Musk"],
-      correct: "Bill Gates"
-    },
-    {
-      question: `Which symbol is used for comments in JavaScript?`,
-      answers: ["//", "/*", "#", "<!--"],
-      correct: "//"
-    }
-  ];
+  const categoryMap = {
+    computer: 18,
+    general: 9,
+    math: 19,
+    science: 17,
+    history: 23
+  };
+  const categoryID = categoryMap[topic.toLowerCase()] || 18;
 
-  totalQuestionsElement.innerText = questions.length;
-  startScreen.style.display = "none";
-  quizContainer.style.display = "block";
-  showQuestion();
+  fetch(`https://opentdb.com/api.php?amount=5&category=${categoryID}&type=multiple`)
+    .then((response) => response.json())
+    .then((data) => {
+      questions = data.results.map((item) => {
+        const answers = [...item.incorrect_answers];
+        const randomIndex = Math.floor(Math.random() * 4);
+        answers.splice(randomIndex, 0, item.correct_answer);
+
+        return {
+          question: decodeHTML(item.question),
+          answers: answers.map(decodeHTML),
+          correct: decodeHTML(item.correct_answer),
+        };
+      });
+
+      totalQuestionsElement.innerText = questions.length;
+      startScreen.style.display = "none";
+      quizContainer.style.display = "block";
+      showQuestion();
+    })
+    .catch((error) => {
+      console.error("Failed to fetch questions:", error);
+      alert("Failed to load questions. Please try again.");
+    });
 }
 
-/**
- * Displays the current question and answer choices.
- */
 function showQuestion() {
   clearAnswers();
 
@@ -110,7 +101,7 @@ function showQuestion() {
   questionElement.innerText = currentQuestion.question;
   currentQuestionElement.innerText = currentQuestionIndex + 1;
 
-  currentQuestion.answers.forEach(answer => {
+  currentQuestion.answers.forEach((answer) => {
     const button = document.createElement("button");
     button.innerText = answer;
     button.classList.add("answer-btn");
@@ -121,9 +112,6 @@ function showQuestion() {
   updateProgressBar();
 }
 
-/**
- * Handles answer selection logic.
- */
 function selectAnswer(selectedBtn, correctAnswer) {
   const isCorrect = selectedBtn.innerText === correctAnswer;
   if (isCorrect) {
@@ -134,7 +122,7 @@ function selectAnswer(selectedBtn, correctAnswer) {
     selectedBtn.classList.add("incorrect");
   }
 
-  Array.from(answerButtons.children).forEach(btn => {
+  Array.from(answerButtons.children).forEach((btn) => {
     btn.disabled = true;
     if (btn.innerText === correctAnswer) {
       btn.classList.add("correct");
@@ -144,29 +132,26 @@ function selectAnswer(selectedBtn, correctAnswer) {
   nextButton.style.display = "inline-block";
 }
 
-/**
- * Clears previous answers and hides next button.
- */
 function clearAnswers() {
   answerButtons.innerHTML = "";
   nextButton.style.display = "none";
 }
 
-/**
- * Ends the quiz and shows result screen.
- */
 function endQuiz() {
   quizContainer.style.display = "none";
   resultContainer.style.display = "block";
   finalScoreElement.innerText = `Your final score is ${score} out of ${questions.length}`;
 }
 
-/**
- * Updates progress bar as quiz progresses.
- */
 function updateProgressBar() {
   const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
   progressBar.style.width = `${progress}%`;
+}
+
+function decodeHTML(html) {
+  const txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
 }
 
 // Developer signature
