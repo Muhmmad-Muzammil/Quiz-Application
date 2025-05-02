@@ -1,81 +1,29 @@
-AI Quiz Application
-A modern, interactive quiz application built with HTML, CSS, and JavaScript that tests users' knowledge on computer-related topics.
+🚀 AI Quiz App – Interactive Web-Based Quiz Game
 
-Features
-User-Friendly Interface: Clean, responsive design with smooth animations and transitions
+An elegant, responsive, and interactive AI-powered Quiz Web App designed and developed using HTML5, CSS3, and Vanilla JavaScript. Ideal for students, developers, and educators who want to test or enhance their knowledge in various domains, starting with the Computer Science category.
 
-Personalized Experience: Users enter their name for a customized greeting
+🎯 Key Features:
 
-Computer Quiz: Focused on computer science topics (currently hardcoded questions)
+🔐 Personalized Experience – Users enter their name and get a tailored quiz session
+📚 Topic Selection – (Currently set to Computer, expandable to more topics)
+⚡ Dynamic Question Rendering – Randomized and auto-rotating questions
+📈 Real-Time Score Tracking – Live progress bar and score update
+🏆 Result Display – Final score screen with retake option
+🎨 Fully Responsive Design – Seamless experience on mobile, tablet, and desktop
+⚙️ Clean UI/UX with Font Awesome icons and modern layout
 
-Interactive Elements:
+🛠️ Technologies Used:
 
-Answer buttons with visual feedback (green for correct, red for incorrect)
+HTML5 – Semantic structure
+CSS3 – Responsive and clean styling
+JavaScript (ES6+) – Logic handling and dynamic interactivity
+Font Awesome – Iconography
+Google Fonts (Poppins) – Typography
 
-Progress bar showing quiz completion
+👨‍💻 Developed By:
 
-Score tracking in real-time
+Muhammad Muzammil
+📧 muzammil.thedeveloper@gmail.com
+🔍 Aspiring Web Developer | JavaScript Enthusiast | Front-End Specialist
 
-Result Summary: Shows final score with option to play again
-
-Responsive Design: Works on both desktop and mobile devices
-
-Technical Details
-Frontend:
-
-HTML5 semantic structure
-
-CSS3 with custom properties (variables) for consistent styling
-
-JavaScript ES6 for interactive functionality
-
-Styling:
-
-Modern UI with gradient background and card-based layout
-
-Poppins font family for clean typography
-
-Font Awesome icons for visual cues
-
-CSS animations for smooth transitions
-
-Functionality:
-
-Dynamic question loading
-
-Answer validation logic
-
-Score calculation
-
-Progress tracking
-
-Future Improvements
-Integrate with OpenTDB API for real question fetching
-
-Add multiple difficulty levels
-
-Implement a timer for each question
-
-Add more quiz categories
-
-Include user authentication to save scores
-
-Add sound effects for correct/incorrect answers
-
-How to Use
-Enter your name
-
-Click "Start Quiz"
-
-Answer each question by clicking on your choice
-
-View your final score at the end
-
-Click "Play Again" to restart
-
-Setup
-Simply clone the repository and open index.html in any modern browser. No additional dependencies or installation required.
-
-Developer
-Created by Muhammad Muzammil
-Contact: muzammil.thedeveloper@gmail.com
+Muhammad Muzammil Developer , muzammil.thedeveloper@gmail.com ,Web Development Projects
