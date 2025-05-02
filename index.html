@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1><i class="fas fa-brain"></i> AI Quiz App</h1>
+    </div>
+    
+    <div class="content">
+      <div id="start-screen">
+        <div class="input-group">
+          <label for="username-input">Your Name</label>
+          <input type="text" id="username-input" class="input-field" placeholder="Enter your name...">
+        </div>
+        
+        <div class="input-group">
+          <label for="topic-select">Quiz Topic</label>
+          <select id="topic-select" class="input-field">
+            <option value="Computer">Computer</option>
+          </select>
+        </div>
+        
+        <button id="start-btn" class="btn">
+          <i class="fas fa-play"></i> Start Quiz
+        </button>
+      </div>
+      
+      <h2 id="greeting" style="display:none;"></h2>
+      
+      <div id="quiz-container" style="display:none;">
+        <div class="progress-container">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        
+        <div class="question-container">
+          <div class="question-number">Question <span id="current-question">1</span> of <span id="total-questions">5</span></div>
+          <div id="question"></div>
+        </div>
+        
+        <div class="answer-buttons"></div>
+        
+        <div class="quiz-footer">
+          <div class="score-display">Score: <span id="score">0</span></div>
+          <button id="next-btn" class="btn">Next <i class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+      
+      <div id="result-container" class="result-container">
+        <div class="result-icon"><i class="fas fa-trophy"></i></div>
+        <div class="result-text">Quiz Completed!</div>
+        <div class="result-score" id="final-score"></div>
+        <button id="restart-btn" class="btn"><i class="fas fa-redo"></i> Play Again</button>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Created by Muhammad-Muzammil | <a href="mailto:muzammil.thedeveloper@gmail.com">muzammil.thedeveloper@gmail.com</a></p>
+    </div>
+  </div>
+  
+  
+  <script src="script.js"></script>
+</body>
+</html>
